@@ -1,8 +1,14 @@
 # Smart Surveillance Drone
 
-A student software prototype for reviewing person and vehicle detection events, with a proposed drone integration design.
+A web monitoring dashboard and Python software prototype for Smart Surveillance Drone: inspect person/vehicle events, review alerts, filter detections and export results. Aircraft integration is a proposed design and has not been flight-tested.
 
 Repository: https://github.com/supriyachann/smart-surveillance-drone
+
+## Web dashboard included
+
+The project includes a working **browser dashboard**, not just documentation. Download the repository and open the [standalone dashboard file](Open%20dashboard.html) locally. It needs no installation and includes a clearly labeled synthetic sample session. The Python service and optional YOLO adapter provide the separate detector-event path.
+
+The dashboard is included in this repository; a public hosted website has not been deployed.
 
 ## Implemented
 
