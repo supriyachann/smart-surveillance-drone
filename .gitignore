@@ -6,4 +6,5 @@ __pycache__/
 *.onnx
 runs/
 artifacts/
+dist/
 .DS_Store

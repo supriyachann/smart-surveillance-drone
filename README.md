@@ -8,7 +8,10 @@ Repository: https://github.com/supriyachann/smart-surveillance-drone
 
 The project includes a working **browser dashboard**, not just documentation. Download the repository and open the [standalone dashboard file](Open%20dashboard.html) locally. It needs no installation and includes a clearly labeled synthetic sample session. The Python service and optional YOLO adapter provide the separate detector-event path.
 
-The dashboard is included in this repository; a public hosted website has not been deployed.
+A GitHub Pages workflow is included to publish the sample dashboard at:
+https://supriyachann.github.io/smart-surveillance-drone/
+
+Deployment setup: in repository **Settings > Pages**, select **GitHub Actions** as the publishing source, then run **Publish web dashboard** from the Actions tab if it has not already started. The URL is available after a successful deployment. The hosted site runs synthetic events in browser memory; it does not run Python, process camera input or control an aircraft.
 
 ## Implemented
 

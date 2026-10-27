@@ -1,6 +1,6 @@
 # Open the project
 
-1. Open `Open dashboard.html` in a browser.
+1. Open `Open dashboard.html` in a browser, or visit the GitHub Pages site after its deployment succeeds: https://supriyachann.github.io/smart-surveillance-drone/.
 2. Choose **Load sample events**.
 3. Choose **Inspect**, then **Mark reviewed** on an event.
 4. Filter to **Needs review**, then choose **Export events**.

@@ -6,7 +6,7 @@ Date: 2026-10-27. Core checks used Python 3.14.7 and Node.js on the build host.
 | --- | --- | --- |
 | Python automated suite | 13 tests passed | Event validation, bounded memory, duplicate handling, review, detector adapter and in-memory HTTP handler requests |
 | JavaScript syntax | Passed | `node --check static/app.js` |
-| Offline UI workflow harness | Passed | Load, inspect, review, filter, duplicate suppression and JSON export using a minimal DOM harness |
+| Offline and hosted sample UI workflow harness | Passed | Load, inspect, review, filter, duplicate suppression and JSON export; both file and HTTPS sample modes avoid backend requests |
 | Live HTTP integration | Passed in GitHub CI | Health, sample ingestion and event retrieval through a real local HTTP server; local build sandbox still blocks sockets |
 | Browser visual QA | Blocked | Browser-control service connection returns `EPERM` |
 | Actual YOLO inference | Not run | Optional packages and model weights are not installed |

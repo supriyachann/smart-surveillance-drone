@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
 </head>
 <body>
-  <header><a class="brand" href="index.html">Smart Surveillance Drone<span>Monitoring desk</span></a><p class="mode">Local software prototype</p></header>
+  <header><a class="brand" href="index.html">Smart Surveillance Drone<span>Monitoring desk</span></a><p id="runtime-mode" class="mode">Local software prototype</p></header>
   <main>
     <section class="intro"><div><h1>Observe. Review. Respond.</h1><p>Inspect person and vehicle detections from an authorized camera source.</p></div><div id="connection" role="status">Connecting to local service…</div></section>
     <div class="workspace">
@@ -32,7 +32,8 @@
     </div>
     <section class="session"><div><h2>Try a sample session</h2><p>Two synthetic events exercise the complete review flow. They are not AI results.</p></div><div class="actions"><button id="load">Load sample events</button><button id="export" class="secondary">Export events</button></div></section>
     <p id="message" role="status" aria-live="polite"></p>
-    <footer><p>Events are kept in memory, up to 200, and reset when the server restarts.</p><p>Detection is a cue for human review. It does not identify intent or danger.</p></footer>
+    <footer><p id="storage-note">Events are kept in memory, up to 200, and reset when the server restarts.</p><p>Detection is a cue for human review. It does not identify intent or danger.</p></footer>
+    <nav class="project-links" aria-label="Project resources"><a href="https://github.com/supriyachann/smart-surveillance-drone">Project repository</a><a href="https://github.com/supriyachann/smart-surveillance-drone/blob/main/output/pdf/design-document.pdf">Design document</a><a href="https://github.com/supriyachann/smart-surveillance-drone/blob/main/output/video/project-walkthrough.mp4">Project walkthrough</a></nav>
   </main>
 </body>
 </html>

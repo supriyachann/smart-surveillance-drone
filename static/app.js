@@ -2,11 +2,18 @@ let events = [];
 let selectedId = null;
 const $ = (id) => document.getElementById(id);
 const offline = location.protocol === 'file:';
+const demoMode = offline || document.documentElement.dataset.mode === 'demo';
 const localEvents = [];
+
+if (demoMode) {
+  $('runtime-mode').textContent = 'Interactive sample demo';
+  $('storage-note').textContent = 'Sample events stay in this tab and reset when you reload. No footage or flight data is collected.';
+  $('inspection').textContent = 'Load sample events to inspect and review this synthetic session. Real camera detection runs separately with the Python project.';
+}
 
 async function request(path, body) {
   // Opening index.html directly provides an honest synthetic-only demo.
-  if (offline) {
+  if (demoMode) {
     if (path === '/api/demo') {
       let added = 0;
       for (const [index, label] of ['person','car'].entries()) {
@@ -85,7 +92,7 @@ async function refresh() {
     const result = await request('/api/events');
     const changed = JSON.stringify(events) !== JSON.stringify(result.events);
     events = result.events;
-    $('connection').textContent = offline ? 'Offline preview · synthetic data only · resets on reload' : 'Local service connected · refreshes every 2 seconds';
+    $('connection').textContent = offline ? 'Offline preview · synthetic data only · resets on reload' : demoMode ? 'Sample preview · synthetic data only · resets on reload' : 'Local service connected · refreshes every 2 seconds';
     if (changed) render();
   } catch (error) {
     $('connection').textContent = 'Service unavailable · restart app.py';
