@@ -76,7 +76,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/smoke_server.py
 ```
 
-The first command tests schema validation, bounded storage, the detector-result adapter and HTTP handlers using in-memory HTTP requests. The second opens a real local port for an integration check. See [validation results](docs/validation.md) for executed checks and limits. GitHub CI is configured for both commands; its outcome is unverified until it runs.
+The first command tests schema validation, bounded storage, the detector-result adapter and HTTP handlers using in-memory HTTP requests. The second opens a real local port for an integration check. See [validation results](docs/validation.md) for executed checks and limits. GitHub CI [passed](https://github.com/supriyachann/smart-surveillance-drone/actions/runs/40549294194), including the live-server smoke check and offline dashboard workflow. Local browser visual QA and actual model inference remain unverified.
 
 ## API
 

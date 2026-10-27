@@ -16,14 +16,12 @@ For the Python service or optional YOLO video/webcam adapter, follow README.md.
 - `data/synthetic-scene.png` and `data/synthetic-scene.mp4`: original synthetic fixtures, not real detection data.
 - `docs/submission.md`: title, theme suggestion, SDG alignment, statements and remaining checklist.
 
-## Publish to the correct repository
+## Repository and future updates
 
-Use the signed-in `supriyachann` browser session and open:
+The project is published at:
 https://github.com/supriyachann/smart-surveillance-drone
 
-Choose **uploading an existing file** in the empty repository, or **Add file > Upload files**. Upload the extracted project contents, preserving folders, and review the file list before committing. Upload files rather than only the ZIP. Include hidden `.github`, `.gitignore` and `.env.example` if adding through a file picker. Never upload a real `.env`, private recordings or credentials.
-
-Publication was not performed by the build session: it could list the Aside repository tab, but attaching to it returned a local `EPERM` permission error. The GitHub connector belongs to a different account and was not used for writes.
+Future updates must be published using an account with write access to this repository. Keep `.env`, private recordings and credentials out of commits. Do not upload only the ZIP: preserve source files and folders.
 
 ## Work requiring real-world evidence
 

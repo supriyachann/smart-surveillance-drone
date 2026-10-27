@@ -33,7 +33,8 @@ https://github.com/supriyachann/smart-surveillance-drone
 - [x] Add an environment-variable example matching the code, without secrets.
 - [ ] Add authorized sample images/video and provenance.
 - [x] Run automated core/HTTP-handler tests and record their scope in validation.md.
-- [ ] Run live-server, actual inference and hardware tests before claiming those results.
+- [x] Run live-server integration smoke check in GitHub CI.
+- [ ] Run actual inference, browser visual review and hardware tests before claiming those results.
 - [x] Prepare a four-page design PDF with architecture, flow and wireframe.
 - [ ] Confirm the portal accepts PDF for the design upload.
 - [x] Prepare a 4-minute, 720p captioned design/software walkthrough (not a real flight/inference recording).
