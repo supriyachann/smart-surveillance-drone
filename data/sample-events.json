@@ -1,0 +1,22 @@
+[
+  {
+    "schema_version": 1,
+    "event_id": "synthetic-001",
+    "timestamp": "2026-01-01T00:00:00Z",
+    "source_id": "demo-camera",
+    "label": "person",
+    "confidence": 0.87,
+    "bbox_normalized": [0.2, 0.15, 0.4, 0.8],
+    "synthetic": true
+  },
+  {
+    "schema_version": 1,
+    "event_id": "synthetic-002",
+    "timestamp": "2026-01-01T00:00:05Z",
+    "source_id": "demo-camera",
+    "label": "car",
+    "confidence": 0.91,
+    "bbox_normalized": [0.5, 0.45, 0.9, 0.75],
+    "synthetic": true
+  }
+]

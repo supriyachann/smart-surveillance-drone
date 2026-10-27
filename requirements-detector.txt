@@ -1,0 +1,4 @@
+# Optional only. Use a Python 3.11 or 3.12 virtual environment.
+# Core dashboard and tests need no external packages.
+ultralytics>=8.3,<9
+opencv-python>=4.10,<5

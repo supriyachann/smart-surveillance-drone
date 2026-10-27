@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Surveillance Drone dashboard wireframe</title>
+  <desc id="desc">Design preview with a video placeholder, unavailable telemetry, and synthetic review events. No live system is shown.</desc>
+  <rect width="1200" height="760" fill="#f5f7fa"/>
+  <g font-family="Arial, sans-serif">
+    <rect width="1200" height="96" fill="#142b3a"/>
+    <text x="32" y="43" font-size="25" font-weight="700" fill="white">Smart Surveillance Drone</text>
+    <text x="32" y="72" font-size="15" fill="#c9d9e4">Operator dashboard • proposed interface</text>
+    <rect x="960" y="27" width="208" height="40" rx="5" fill="#ffe3a3"/>
+    <text x="978" y="53" font-size="16" fill="#543b0c">DESIGN PREVIEW</text>
+    <text x="32" y="139" font-size="17" fill="#344b5b">Session: demonstration</text>
+    <text x="630" y="139" font-size="16" fill="#344b5b">Camera: unavailable   |   Link: unavailable</text>
+    <rect x="32" y="165" width="740" height="420" rx="6" fill="#e0e7ed" stroke="#a4b5c2"/>
+    <text x="266" y="353" font-size="23" fill="#344b5b">Video stream placeholder</text>
+    <text x="228" y="388" font-size="16" fill="#526976">No camera connected • no live detections</text>
+    <rect x="800" y="165" width="368" height="420" rx="6" fill="white" stroke="#a4b5c2"/>
+    <text x="824" y="203" font-size="21" fill="#142b3a">Events for human review</text>
+    <text x="824" y="234" font-size="14" fill="#526976">Synthetic examples • not detector results</text>
+    <path d="M824 255 H1144 M824 371 H1144" stroke="#ccd6de"/>
+    <text x="824" y="288" font-size="18" fill="#142b3a">Person detected</text>
+    <text x="824" y="318" font-size="15" fill="#526976">Example confidence: 0.87</text>
+    <text x="824" y="345" font-size="14" fill="#526976">Historical example • synthetic-001</text>
+    <text x="824" y="404" font-size="18" fill="#142b3a">Car detected</text>
+    <text x="824" y="434" font-size="15" fill="#526976">Example confidence: 0.91</text>
+    <text x="824" y="461" font-size="14" fill="#526976">Historical example • synthetic-002</text>
+    <text x="824" y="542" font-size="14" fill="#526976">Detection is not a threat assessment.</text>
+    <rect x="32" y="609" width="1136" height="84" rx="6" fill="white" stroke="#a4b5c2"/>
+    <text x="54" y="642" font-size="17" fill="#142b3a">Flight telemetry: unavailable</text>
+    <text x="54" y="673" font-size="15" fill="#526976">Battery: —   |   GPS: —   |   Flight mode: —   |   Last update: no telemetry source connected</text>
+    <text x="32" y="730" font-size="14" fill="#526976">Wireframe only. Operator retains aircraft control. Flight safety is independent of this interface.</text>
+  </g>
+</svg>

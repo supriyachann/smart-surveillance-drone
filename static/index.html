@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Surveillance Drone · Monitoring desk</title>
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="index.html">Smart Surveillance Drone<span>Monitoring desk</span></a><p class="mode">Local software prototype</p></header>
+  <main>
+    <section class="intro"><div><h1>Observe. Review. Respond.</h1><p>Inspect person and vehicle detections from an authorized camera source.</p></div><div id="connection" role="status">Connecting to local service…</div></section>
+    <div class="workspace">
+      <section class="scene-panel" aria-labelledby="scene-title">
+        <div class="panel-heading"><h2 id="scene-title">Event inspection</h2><span id="scene-mode">No event selected</span></div>
+        <div class="viewport"><svg id="scene" viewBox="0 0 900 520" role="img" aria-label="Illustrative monitoring area. No camera feed.">
+          <defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#d4dfd9" stroke-width="1"/></pattern></defs>
+          <rect width="900" height="520" fill="#edf2ed"/><rect width="900" height="520" fill="url(#grid)"/>
+          <path d="M-10 360L910 140" stroke="#cad8d1" stroke-width="85"/>
+          <path d="M-10 360L910 140" stroke="#f9fbf8" stroke-width="3" stroke-dasharray="15 12"/>
+          <g fill="#d5e2dc" stroke="#9dafaa" stroke-width="2"><path d="M100 70H285V190H100Z"/><path d="M590 335H790V455H590Z"/><path d="M350 60H490V155H350Z"/></g>
+          <g fill="#628074" font-family="sans-serif" font-size="15"><text x="122" y="138">Building A</text><text x="616" y="400">Building B</text><text x="372" y="115">Service area</text></g>
+          <rect id="bbox" x="0" y="0" width="0" height="0" fill="#16725b15" stroke="#16725b" stroke-width="3"/>
+          <text id="box-label" x="20" y="35" font-size="18" font-family="sans-serif" fill="#124b3e">Select an event to inspect its bounding box</text>
+        </svg><div class="scene-note">Illustrative scene · no camera feed</div></div>
+        <div class="inspection" id="inspection">Load sample events to explore the dashboard, or connect the optional detector.</div>
+        <div class="telemetry"><div><span>Flight controller</span><strong>Not connected</strong></div><div><span>Battery / GPS</span><strong>Unavailable</strong></div><div><span>Aircraft commands</span><strong>Disabled</strong></div></div>
+      </section>
+      <aside aria-labelledby="events-title"><div class="panel-heading"><h2 id="events-title">Review queue</h2><span id="event-count">0 events</span></div>
+        <div class="filters"><label for="filter">Show</label><select id="filter"><option value="all">All events</option><option value="pending">Needs review</option><option value="synthetic">Synthetic samples</option><option value="real">Detector events</option></select></div>
+        <div id="events" class="events"><p class="empty">No detections yet. Load the sample session to try event inspection and review.</p></div>
+      </aside>
+    </div>
+    <section class="session"><div><h2>Try a sample session</h2><p>Two synthetic events exercise the complete review flow. They are not AI results.</p></div><div class="actions"><button id="load">Load sample events</button><button id="export" class="secondary">Export events</button></div></section>
+    <p id="message" role="status" aria-live="polite"></p>
+    <footer><p>Events are kept in memory, up to 200, and reset when the server restarts.</p><p>Detection is a cue for human review. It does not identify intent or danger.</p></footer>
+  </main>
+</body>
+</html>

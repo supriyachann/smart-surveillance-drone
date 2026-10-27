@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Surveillance Drone · Monitoring desk</title>
+  <style>:root{--ink:#183d35;--paper:#f7f9f6;--line:#cddbd4;--green:#176a55;--muted:#536b61;--blue:#326e8b}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 'Avenir Next','Segoe UI',sans-serif}header{padding:23px 4vw;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:white}.brand{font-weight:750;font-size:20px;color:inherit;text-decoration:none}.brand span{display:block;font-size:13px;font-weight:500;color:var(--muted)}.mode{font-size:14px;background:#e5f0eb;padding:8px 14px;border-radius:25px}main{max-width:1600px;margin:auto;padding:0 4vw}.intro{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:34px 0 28px}h1{font-size:clamp(25px,3vw,40px);font-weight:650;letter-spacing:-1.2px;margin:0 0 6px}p{margin:0}.intro p{color:var(--muted)}#connection{font-size:13px;flex-shrink:0;color:var(--muted)}.workspace{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(310px,1fr);border:1px solid var(--line);background:white;border-radius:12px;overflow:hidden}.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:18px 22px;border-bottom:1px solid var(--line)}h2{font-size:17px;margin:0;font-weight:650}.panel-heading span{font-size:12px;color:var(--muted)}aside{border-left:1px solid var(--line);min-width:0}.viewport{position:relative;overflow:hidden}.viewport svg{display:block;width:100%;height:auto}.scene-note{position:absolute;bottom:14px;left:18px;background:#fffef0e8;color:#655126;padding:5px 10px;font-size:12px;border:1px solid #d6c69f;border-radius:4px}.inspection{padding:18px 22px;font-size:14px;border-top:1px solid var(--line);min-height:78px}.telemetry{display:grid;grid-template-columns:repeat(3,1fr);padding:16px 22px;background:#f4f7f4;gap:14px}.telemetry span{font-size:11px;display:block;color:var(--muted)}.telemetry strong{font-size:13px;font-weight:600}.filters{display:flex;gap:12px;padding:14px 20px;align-items:center;font-size:13px}select{padding:8px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:5px;min-width:0;flex:1}.events{max-height:520px;overflow-y:auto}.empty{padding:32px 24px;color:var(--muted);font-size:14px}.event{border-top:1px solid var(--line);padding:18px 20px}.event.selected{background:#eef6f2;box-shadow:inset 3px 0 var(--green)}.event-top{display:flex;justify-content:space-between;gap:8px}.event h3{font-size:17px;margin:0;text-transform:capitalize}.tag{font-size:11px;color:#755000;background:#fff1cc;border-radius:4px;padding:3px 7px}.tag.real{background:#e3f0f8;color:#20526d}.meta{font-size:12px;color:var(--muted);margin:8px 0;overflow-wrap:anywhere}.event-actions{display:flex;gap:10px;align-items:center}.event-actions button{font-size:12px;padding:7px 10px}.reviewed{font-size:12px;color:var(--green)}button{font:inherit;background:var(--green);border:1px solid var(--green);border-radius:6px;padding:11px 18px;color:white;cursor:pointer;font-weight:600}button:hover{filter:brightness(.94)}button:disabled{opacity:.6;cursor:wait}button.secondary{color:var(--green);background:white}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #387ca6;outline-offset:3px}.session{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}.session p{font-size:14px;color:var(--muted);margin-top:5px;max-width:65ch}.actions{display:flex;gap:10px;flex-shrink:0}#message{min-height:32px;padding-top:10px;font-size:14px;color:var(--blue)}footer{padding:6px 0 25px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted)}@media(max-width:950px){.workspace{grid-template-columns:1fr}aside{border-left:0;border-top:1px solid var(--line)}.events{max-height:370px}.session,.intro{align-items:flex-start;flex-direction:column}.intro{gap:10px}footer{flex-direction:column;gap:6px}.mode{max-width:160px;text-align:center}header{gap:16px}}@media(max-width:500px){.brand{font-size:16px}.mode{font-size:11px;padding:6px 8px}.panel-heading{padding:15px}.panel-heading span{font-size:11px}.telemetry{padding:14px;gap:8px}.telemetry strong{font-size:11px}.actions{flex-wrap:wrap}.scene-note{font-size:10px;bottom:8px;left:10px}.inspection{padding:15px}.intro{padding-top:24px}}
+</style>
+</head>
+<body>
+  <header><a class="brand" href="#">Smart Surveillance Drone<span>Monitoring desk</span></a><p class="mode">Local software prototype</p></header>
+  <main>
+    <section class="intro"><div><h1>Observe. Review. Respond.</h1><p>Inspect person and vehicle detections from an authorized camera source.</p></div><div id="connection" role="status">Connecting to local service…</div></section>
+    <div class="workspace">
+      <section class="scene-panel" aria-labelledby="scene-title">
+        <div class="panel-heading"><h2 id="scene-title">Event inspection</h2><span id="scene-mode">No event selected</span></div>
+        <div class="viewport"><svg id="scene" viewBox="0 0 900 520" role="img" aria-label="Illustrative monitoring area. No camera feed.">
+          <defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#d4dfd9" stroke-width="1"/></pattern></defs>
+          <rect width="900" height="520" fill="#edf2ed"/><rect width="900" height="520" fill="url(#grid)"/>
+          <path d="M-10 360L910 140" stroke="#cad8d1" stroke-width="85"/>
+          <path d="M-10 360L910 140" stroke="#f9fbf8" stroke-width="3" stroke-dasharray="15 12"/>
+          <g fill="#d5e2dc" stroke="#9dafaa" stroke-width="2"><path d="M100 70H285V190H100Z"/><path d="M590 335H790V455H590Z"/><path d="M350 60H490V155H350Z"/></g>
+          <g fill="#628074" font-family="sans-serif" font-size="15"><text x="122" y="138">Building A</text><text x="616" y="400">Building B</text><text x="372" y="115">Service area</text></g>
+          <rect id="bbox" x="0" y="0" width="0" height="0" fill="#16725b15" stroke="#16725b" stroke-width="3"/>
+          <text id="box-label" x="20" y="35" font-size="18" font-family="sans-serif" fill="#124b3e">Select an event to inspect its bounding box</text>
+        </svg><div class="scene-note">Illustrative scene · no camera feed</div></div>
+        <div class="inspection" id="inspection">Load sample events to explore the dashboard, or connect the optional detector.</div>
+        <div class="telemetry"><div><span>Flight controller</span><strong>Not connected</strong></div><div><span>Battery / GPS</span><strong>Unavailable</strong></div><div><span>Aircraft commands</span><strong>Disabled</strong></div></div>
+      </section>
+      <aside aria-labelledby="events-title"><div class="panel-heading"><h2 id="events-title">Review queue</h2><span id="event-count">0 events</span></div>
+        <div class="filters"><label for="filter">Show</label><select id="filter"><option value="all">All events</option><option value="pending">Needs review</option><option value="synthetic">Synthetic samples</option><option value="real">Detector events</option></select></div>
+        <div id="events" class="events"><p class="empty">No detections yet. Load the sample session to try event inspection and review.</p></div>
+      </aside>
+    </div>
+    <section class="session"><div><h2>Try a sample session</h2><p>Two synthetic events exercise the complete review flow. They are not AI results.</p></div><div class="actions"><button id="load">Load sample events</button><button id="export" class="secondary">Export events</button></div></section>
+    <p id="message" role="status" aria-live="polite"></p>
+    <footer><p>Events are kept in memory, up to 200, and reset when the server restarts.</p><p>Detection is a cue for human review. It does not identify intent or danger.</p></footer>
+  </main>
+<script>let events = [];
+let selectedId = null;
+const $ = (id) => document.getElementById(id);
+const offline = location.protocol === 'file:';
+const localEvents = [];
+
+async function request(path, body) {
+  // Opening index.html directly provides an honest synthetic-only demo.
+  if (offline) {
+    if (path === '/api/demo') {
+      let added = 0;
+      for (const [index, label] of ['person','car'].entries()) {
+        const event_id = `offline-sample-${index}`;
+        if (localEvents.some(e=>e.event_id===event_id)) continue;
+        localEvents.unshift({schema_version:1,event_id,timestamp:'2026-01-01T00:00:00Z',source_id:'offline-demo',label,confidence:index ? .91 : .87,bbox_normalized:index ? [.5,.45,.9,.75] : [.2,.15,.4,.8],synthetic:true,reviewed:false});
+        added++;
+      }
+      return {added};
+    }
+    if (path === '/api/review') {
+      const event = localEvents.find(e=>e.event_id===body.event_id);
+      if (event) event.reviewed = true;
+      return {reviewed:Boolean(event)};
+    }
+    return {events:localEvents.map(e=>({...e}))};
+  }
+  const response = await fetch(path, body === undefined ? {} : {
+    method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || 'Request failed');
+  return data;
+}
+
+function element(tag, text, className) {
+  const node = document.createElement(tag);
+  if (text !== undefined) node.textContent = text;
+  if (className) node.className = className;
+  return node;
+}
+
+function inspect(event) {
+  selectedId = event.event_id;
+  const [x1, y1, x2, y2] = event.bbox_normalized;
+  const box = $('bbox');
+  Object.entries({x:x1*900,y:y1*520,width:(x2-x1)*900,height:(y2-y1)*520}).forEach(([k,v])=>box.setAttribute(k,v));
+  $('box-label').textContent = `${event.label} · ${(event.confidence*100).toFixed(0)}% model confidence`;
+  $('scene-mode').textContent = event.synthetic ? 'Synthetic event' : 'Detector event';
+  $('inspection').textContent = `${event.source_id} · Captured ${new Date(event.timestamp).toLocaleString()}. Bounding box projected onto an illustration, not its original camera frame.`;
+  render();
+}
+
+function render() {
+  const filter = $('filter').value;
+  const filtered = events.filter(e => filter === 'all' || (filter === 'pending' && !e.reviewed) || (filter === 'synthetic' && e.synthetic) || (filter === 'real' && !e.synthetic));
+  $('event-count').textContent = `${events.filter(e=>!e.reviewed).length} awaiting review`;
+  $('events').replaceChildren();
+  if (!filtered.length) $('events').append(element('p', events.length ? 'No events match this filter.' : 'No detections yet. Load sample events or connect the optional detector.', 'empty'));
+  for (const event of filtered) {
+    const row = element('article', undefined, 'event' + (event.event_id === selectedId ? ' selected' : ''));
+    const top = element('div', undefined, 'event-top');
+    top.append(element('h3', event.label), element('span', event.synthetic ? 'Synthetic sample' : 'Detector event', 'tag' + (event.synthetic ? '' : ' real')));
+    const date = new Date(event.timestamp);
+    const meta = element('p', `${(event.confidence*100).toFixed(0)}% confidence · ${date.toLocaleString()} · ${event.source_id}`, 'meta');
+    const actions = element('div', undefined, 'event-actions');
+    const view = element('button', 'Inspect', 'secondary');
+    view.onclick = () => inspect(event);
+    actions.append(view);
+    if (event.reviewed) actions.append(element('span', 'Reviewed', 'reviewed'));
+    else {
+      const review = element('button', 'Mark reviewed');
+      review.onclick = async () => {
+        try { await request('/api/review', {event_id:event.event_id}); await refresh(); }
+        catch (error) { $('message').textContent = error.message; }
+      };
+      actions.append(review);
+    }
+    row.append(top, meta, actions);
+    $('events').append(row);
+  }
+}
+
+async function refresh() {
+  try {
+    const result = await request('/api/events');
+    const changed = JSON.stringify(events) !== JSON.stringify(result.events);
+    events = result.events;
+    $('connection').textContent = offline ? 'Offline preview · synthetic data only · resets on reload' : 'Local service connected · refreshes every 2 seconds';
+    if (changed) render();
+  } catch (error) {
+    $('connection').textContent = 'Service unavailable · restart app.py';
+  }
+}
+
+$('load').onclick = async () => {
+  $('load').disabled = true;
+  try {
+    const result = await request('/api/demo', {});
+    await refresh();
+    if (events.length) inspect(events.find(e=>e.synthetic) || events[0]);
+    $('message').textContent = result.added ? 'Two synthetic events loaded. Select Inspect, then Mark reviewed.' : 'Sample events are already loaded; duplicate events were skipped.';
+  } catch (error) { $('message').textContent = error.message; }
+  finally { $('load').disabled = false; }
+};
+$('export').onclick = () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify({exported_at:new Date().toISOString(),events},null,2)],{type:'application/json'}));
+  const link = element('a'); link.href=url; link.download='surveillance-events.json'; link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  $('message').textContent = `Exported ${events.length} events, including synthetic labels and review status.`;
+};
+$('filter').onchange = render;
+render(); refresh(); setInterval(refresh,2000);
+</script></body>
+</html>
